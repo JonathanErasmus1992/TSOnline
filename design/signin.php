@@ -67,7 +67,7 @@
 					<td><input type="password" id="txtPassword" name="txtPassword" value="<?php echo $password;?>"/></td>
 				</tr>
 			</table>
-			<pre>                                                           <input type='submit' name="submit" value='Sign In To My Account'/></pre>
+			<p align="center"><input type='submit' name="submit" value='Sign In To My Account'/></p>
 		</fieldset>
 	</form>
 <?php

@@ -22,7 +22,6 @@
 	$itemList[ ] = $item1;
 	$itemList[ ] = $item2;
 	$itemList[ ] = $item3;
-	echo "<p>View All Toys</p>";
 	/*print_r($itemList);
 	 *Prints the array items to screen showing how each item is displayed from the array in a readable way
 	 * var_dump($itemList);
@@ -33,7 +32,7 @@
 	sort($itemList);
 ?>
 
-	<form action = '' methods = 'post'>
+	<form action = '' method = 'post'>
 		<fieldset>
 			<legend>Please click add on the toy/s you wish to purchase</legend>
 			<table border="1" cellspacing='5px' cellpadding="7px">
@@ -56,7 +55,7 @@
 			  	<td><label>{$item->itemCategory}</label></td>
 			  	<td><label>R $tmpStringPrice</label></td>
 			  	<td align='center'><label>{$item->amountInStock}</label></td>
-			  	<td align='center'><input type='number' name='amountOrdered' min='1' max='{$item->amountInStock}' </td>
+			  	<td align='center'><input type='number' value='0' name='amountOrdered' min='1' max='{$item->amountInStock}' </td>
 			  	<td><input type='button' id='{$item->id}' value='Add To Cart' name = 'btnAddToCart' + {$item->id} </td>
               	</tr>";
 		//echo "{$item->itemName}  {$item->itemPrice}  {$item->amountInStock} <br/>";

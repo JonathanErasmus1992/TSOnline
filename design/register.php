@@ -22,16 +22,30 @@
 
         if(empty($username) || empty($password) || empty($confirmpassword) || empty($idnumber)
         || empty($firstnames) || empty($lastname) || empty($password)){
-            echo "<font color='#FB0307'>Please fill in all the fields and try again</font>";
+            echo "<font color='#FB0307'>*Please fill in all the fields and try again</font>";
         }
         else{
             if($password != $confirmpassword){
-                echo "<font color='#FB0307'>Please ensure that the Password and Confirm Password match and try again</font>";
+                echo "<font color='#FB0307'>*Please ensure that the Password and Confirm Password match and try again</font>";
                 $password = "";
                 $confirmpassword = "";
             }
             else{
-                echo "<font color='lime'>New Customer Successfully Created</font>";
+                $service_url = "http://localhost:8080/register?username=".$username."&password=".$password."&firstname=".
+                $firstnames."&lastname="."&idnumber=".$idnumber."&contact=".$contact;
+                $curl = curl_init($service_url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                $curl_response = curl_exec($curl);
+                if ($curl_response === false) {
+                    $info = curl_getinfo($curl);
+                    curl_close($curl);
+                    die('error has occurred during curl exec. Additional info: ' . var_export($info));
+                }
+                curl_close($curl);
+                $json_array = json_decode($curl_response, true, 512, JSON_BIGINT_AS_STRING);
+                if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
+                    die('error occurred: ' . $json->response->errormessage);
+                }
             }
         }
     }
@@ -70,7 +84,7 @@
         <td><input type = "text" name = "txtContact" value="<?php echo $contact;?>"/></td>
     </tr>
 </table>
-<pre>                                         <input type ='submit' value ='Register New Account' name = 'submit'/></pre>
+<p align="center"><input type ='submit' value ='Register New Account' name = 'submit'/></p>
     </fieldset>
 </form>
 <!-- Username check if the username is unique or not. Service? -->

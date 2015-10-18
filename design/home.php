@@ -8,7 +8,8 @@
 		include "headerSignIn.php";
 	}
 ?>
-<p>Home</p>
+
+	<p>Home</p>
 <?php
 	include "footer.php";
 ?>
