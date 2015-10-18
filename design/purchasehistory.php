@@ -1,6 +1,6 @@
 <?php
 	$title = "Purchase History";
-	include "headerSignIn.php";
+	include "headerLogOut.php.php";
 ?>
 <p>Purchase History</p>
 <?php

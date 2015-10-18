@@ -19,9 +19,17 @@ $title = "Logout";
 <?php
     if(isset($_POST['saveAndLogout'])){
 
+        //Save shopping cart code to go above over here
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+        header("Location: home.php");
     }
     else if(isset($_POST['logout'])){
-
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+        header("Location: home.php");
     }
 ?>
 

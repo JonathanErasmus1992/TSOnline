@@ -1,6 +1,6 @@
 <?php
 	$title = "My Account";
-	include "headerSignIn.php";
+	include "headerLogOut.php.php";
 ?>
 <p>My Account</p>
 <?php

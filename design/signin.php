@@ -13,30 +13,43 @@
 		$password = $_POST['txtPassword'];
 
 		if (empty($username) && empty($password)) {
-			echo "<font color='#FB0307'>Please fill in both your username and password</font>";
+			echo "<font color='#FB0307'>*Please fill in both your username and password</font>";
 			$username = "";
 			$password = "";
 		} else if (!empty($username) && empty($password)) {
-			echo "<font color='#FB0307'>Please fill in your password</font>";
+			echo "<font color='#FB0307'>*Please fill in your password</font>";
 			$password = "";
 		} else if (empty($username) && !empty($password)) {
-			echo "<font color='#FB0307'>Please fill in your username</font>";
+			echo "<font color='#FB0307'>*Please fill in your username</font>";
 			$username = "";
 		} else {
-			if ($username != "JonE" && $password != "1234") {
-				echo "<font color='#FB0307'>Please make sure that both your username and password are correct</font>";
-				$username = "";
-				$password = "";
-			} else if ($username != "JonE" && $password == "1234") {
-				echo "<font color='#FB0307'>Please make sure that the username you provided is correct</font>";
-				$password = "";
-			} else if ($username == "JonE" && $password != "1234") {
-				echo "<font color='#FB0307'>Please make sure that the password you provided is correct</font>";
-				$username = "";
-			} else if ($username == "JonE" && $password == "1234") {
+			$service_url = "http://localhost:8080/login?username=".$username."&password=".$password;
+			$curl = curl_init($service_url);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+			$curl_response = curl_exec($curl);
+			if ($curl_response === false) {
+				$info = curl_getinfo($curl);
+				curl_close($curl);
+				die('error has occurred during curl exec. Additional info: ' . var_export($info));
+			}
+			curl_close($curl);
+			$json_array = json_decode($curl_response, true, 512, JSON_BIGINT_AS_STRING);
+			if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
+				die('error occurred: ' . $json->response->errormessage);
+			}
+
+			if(isset($json_array)){
 				$_SESSION['username'] = $username;
 				$_SESSION['password'] = $password;
+				$_SESSION['IDNumber'] = $json_array['idNumber'];
+				$_SESSION['firstNames'] = $json_array['firstName'];
+				$_SESSION['lastName'] = $json_array['lastName'];
+				$_SESSION['IDNumber'] = $json_array['idNumber'];
+				$_SESSION['contact'] = $json_array['contact'];
+
 				header("Location: home.php");
+			}else{
+				echo "<font color='#FB0307'>*Please ensure that the credentials you provided are correct and try again.</font>";
 			}
 		}
 	}
