@@ -55,6 +55,10 @@
 					//echo "{$item->itemName}  {$item->itemPrice}  {$item->amountInStock} <br/>";
 				}
 				?>
+				<tr>
+					<td align="center">Shopping Cart Total:</td>
+					<td align="right" colspan="6">R </td><!--Add Total amount here-->
+				</tr>
 			</table>
 			</br>
 

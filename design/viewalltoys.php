@@ -46,9 +46,10 @@
     }*/
 
     sort($itemList);
+    $addItem = array();
 ?>
 
-    <form action = '' method = 'post'>
+    <form action = 'viewalltoys.php' method = 'post'>
         <fieldset>
             <legend>Please click add on the toy/s you wish to purchase</legend>
             <table border="1" cellspacing='5px' cellpadding="7px">
@@ -64,20 +65,30 @@
                 <?php
                 foreach ( $itemList as $item )
                 {
-                    $tmpStringPrice = number_format("{$item->itemPrice}", 2);
-                    echo "<tr>
-	          	<td><label>{$item->id}</label></td>
-			  	<td><label>{$item->itemName}</label></td>
-			  	<td align='center'><label>Ages: {$item->itemCategory}</label></td>
-			  	<td><label>R $tmpStringPrice</label></td>
-			  	<td align='center'><label>{$item->amountInStock}</label></td>
-			  	<td align='center'><input type='number' value='1' name='amountOrdered' min='1' max='{$item->amountInStock}' </td>
-			  	<td><input type='button' id='{$item->id}' value='Add To Cart' name = 'btnAddToCart' + {$item->id} </td>
-              	</tr>";
-                    //echo "{$item->itemName}  {$item->itemPrice}  {$item->amountInStock} <br/>";
+                    $tmpStringPrice = number_format("{$item->itemPrice}", 2)
+                ?>
+                <tr>
+	          	<td><label><?php echo $item->id; ?></label></td>
+			  	<td><label><?php echo $item->itemName; ?></label></td>
+			  	<td align='center'><label>Ages: <?php echo $item->itemCategory; ?></label></td>
+			  	<td><label>R <?php echo $tmpStringPrice; ?></label></td>
+			  	<td align='center'><label><?php echo $item->amountInStock; ?></label></td>
+			  	<td align='center'><input type='number' value='1' name='amountOrdered' min='1' max='<?php echo $item->amountInStock; ?>' </td>
+			  	<td><input type="submit" value="Add To Cart" name="<?php $clicked[] = $item->id; echo $item->id; ?>" </td>
+              	</tr>
+              	<?php
                 }
                 ?>
             </table>
+            <?php
+            foreach($clicked as $click){
+                if(isset($_POST[$click])){
+                    echo "You clicked ".$click;
+                }
+            }
+
+            var_dump($clicked);
+            ?>
         </fieldset>
     </form>
 <?php

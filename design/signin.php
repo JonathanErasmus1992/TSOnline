@@ -48,6 +48,23 @@
 				$_SESSION['IDNumber'] = $json_array['idNumber'];
 				$_SESSION['contact'] = $json_array['contact'];
 
+
+				//$currentOrder = 0;
+
+				$tmpArray = $json_array['orders'];
+				$tmpOrderID = "";
+
+				for($i = 0; $i < count($tmpArray); $i++){
+					$tmp1 = $tmpArray[$i]['id'];
+					$tmp2 = true;
+					$tmp2 = $tmpArray[$i]['checkout'];
+					if($tmp2 == false){
+						$tmpOrderID = $tmp1;
+					}
+				}
+
+				$_SESSION['order_id'] = $tmpOrderID;
+
 				header("Location: home.php");
 				die();
 			}else{
