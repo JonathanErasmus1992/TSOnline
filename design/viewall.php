@@ -29,6 +29,7 @@
 	/*foreach($itemList as $item){
 		echo $item['id'], " ", $item['itemName'], " ", $item['itemPrice'], " ", $item['amountInStock'];
 	}*/
+
 	sort($itemList);
 ?>
 

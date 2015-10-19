@@ -14,7 +14,7 @@
     	<nav id="navigation">
     		<ul id = "nav">
             	<li><a Href = "home.php">Home</a></li>
-                <li><a Href = "viewall.php">View All Toys</a></li>
+                <li><a Href = "viewalltoys.php">View All Toys</a></li>
                 <li><a Href = "categories.php">Categories</a></li>
                 <li><a Href = "aboutus.php">About Us</a></li>
                 <li><a Href = "#"></a></li>
