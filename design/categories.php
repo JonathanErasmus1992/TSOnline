@@ -35,7 +35,7 @@
 
 <?php
 	if(isset($_POST['cat1'])){
-		$_SESSION['selectedCategory'] = "cat1";
+		$_SESSION['selectedCategory'] = "0-3";
 		//echo "BLUE";
 		?>
 			<script type="text/javascript">
@@ -44,7 +44,7 @@
 		<?php
 	}
 	if(isset($_POST['cat2'])){
-		$_SESSION['selectedCategory'] = "cat2";
+		$_SESSION['selectedCategory'] = "4-9";
 		//echo "YELLOW";
 		?>
 			<script type="text/javascript">
@@ -53,7 +53,7 @@
 		<?php
 	}
 	if(isset($_POST['cat3'])){
-		$_SESSION['selectedCategory'] = "cat3";
+		$_SESSION['selectedCategory'] = "10-13+";
 		//echo "PURPLE";
 		?>
 			<script type="text/javascript">
@@ -62,7 +62,7 @@
 		<?php
 	}
 	if(isset($_POST['cat4'])){
-		$_SESSION['selectedCategory'] = "cat4";
+		$_SESSION['selectedCategory'] = "Consoles and Games";
 		//echo "RED";
 	?>
 			<script type="text/javascript">

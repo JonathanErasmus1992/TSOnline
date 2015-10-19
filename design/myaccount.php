@@ -52,7 +52,28 @@
 					echo "<p align='center'><font color='#FB0307'>*Please ensure that the Password and Confirm Password match and try again.</font></p>";
 				}else{
 					//Code to save new password. Change Password Service
-					$_SESSION['password'] = $password;
+					$service_url = "http://localhost:8080/customer/changepassword?customerID=".$_SESSION['customerID'].
+						"&newPassword=".$password;
+					$curl = curl_init($service_url);
+					curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+					$curl_response = curl_exec($curl);
+					if ($curl_response === false) {
+						$info = curl_getinfo($curl);
+						curl_close($curl);
+						die('error has occurred during curl exec. Additional info: ' . var_export($info));
+					}
+					curl_close($curl);
+					$json_array = array();
+					unset($json_array);
+					$json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
+					if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
+						die('error occurred: ' . $json_array->response->errormessage);
+					}
+
+					if(isset($curl_response)) {
+						$_SESSION['password'] = $password;
+					}
+					//Code to save new password. Change Password Service
 				}
 			}
 			if(isset($_POST['deactivateAccount'])){

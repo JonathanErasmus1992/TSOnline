@@ -15,14 +15,15 @@ include "../design/headerSignIn.php";
         die('error has occurred during curl exec. Additional info: ' . var_export($info));
     }
     curl_close($curl);
-    $json_array = json_decode($curl_response, true, 512, JSON_BIGINT_AS_STRING);
+    $json_array = json_decode($curl_response);
     if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
         die('error occurred: ' . $json_array->response->errormessage);
     }
 
-    if(isset($json_array)) {
-        if($json_array == true){
+    if(isset($curl_response)) {
+        if($curl_response == true){
             echo "GREEN BLUE YELLOW";
+            echo $curl_response;
         }
         else{
             echo "GREEN BLUE GREEN";

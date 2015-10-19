@@ -1,11 +1,10 @@
 <?php
-$title = "Test Item Category API";
-include "../design/headerSignIn.php";
+    $title = "Test Change Password API";
+    include "../design/headerSignIn.php";
 ?>
 
 <?php
-    //Change Item name each time
-    $service_url = "http://localhost:8080/item/category?category=0-3";
+    $service_url = "http://localhost:8080/customer/changepassword?customerID=2&newPassword=12345";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);
@@ -22,12 +21,12 @@ include "../design/headerSignIn.php";
         die('error occurred: ' . $json_array->response->errormessage);
     }
 
-    if(isset($json_array)) {
-       var_dump($json_array);
+    if(isset($curl_response)) {
+        var_dump($curl_response);
     }
 
 ?>
 
 <?php
-include "../design/footer.php";
+    include "../design/footer.php";
 ?>

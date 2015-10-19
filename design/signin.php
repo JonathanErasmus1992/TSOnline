@@ -39,6 +39,7 @@
 			}
 
 			if(isset($json_array)){
+				$_SESSION['customerID'] = $json_array['id'];
 				$_SESSION['username'] = $username;
 				$_SESSION['password'] = $password;
 				$_SESSION['IDNumber'] = $json_array['idNumber'];

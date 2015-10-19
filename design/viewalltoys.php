@@ -68,7 +68,7 @@
                     echo "<tr>
 	          	<td><label>{$item->id}</label></td>
 			  	<td><label>{$item->itemName}</label></td>
-			  	<td><label>{$item->itemCategory}</label></td>
+			  	<td align='center'><label>Ages: {$item->itemCategory}</label></td>
 			  	<td><label>R $tmpStringPrice</label></td>
 			  	<td align='center'><label>{$item->amountInStock}</label></td>
 			  	<td align='center'><input type='number' value='1' name='amountOrdered' min='1' max='{$item->amountInStock}' </td>
