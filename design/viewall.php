@@ -55,7 +55,7 @@
 			  	<td><label>{$item->itemCategory}</label></td>
 			  	<td><label>R $tmpStringPrice</label></td>
 			  	<td align='center'><label>{$item->amountInStock}</label></td>
-			  	<td align='center'><input type='number' value='0' name='amountOrdered' min='1' max='{$item->amountInStock}' </td>
+			  	<td align='center'><input type='number' value='1' name='amountOrdered' min='1' max='{$item->amountInStock}' </td>
 			  	<td><input type='button' id='{$item->id}' value='Add To Cart' name = 'btnAddToCart' + {$item->id} </td>
               	</tr>";
 		//echo "{$item->itemName}  {$item->itemPrice}  {$item->amountInStock} <br/>";

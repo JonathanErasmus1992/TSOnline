@@ -26,13 +26,13 @@
         }
         else{
             if($password != $confirmpassword){
-                echo "<font color='#FB0307'>*Please ensure that the Password and Confirm Password match and try again</font>";
+                echo "<font color='#FB0307'>*Please ensure that the Password and Confirm Password match and try again.</font>";
                 $password = "";
                 $confirmpassword = "";
             }
             else{
                 $service_url = "http://localhost:8080/register?username=".$username."&password=".$password."&firstname=".
-                $firstnames."&lastname="."&idnumber=".$idnumber."&contact=".$contact;
+                $firstnames."&lastname=".$lastname."&idnumber=".$idnumber."&contact=".$contact;
                 $curl = curl_init($service_url);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $curl_response = curl_exec($curl);
@@ -45,6 +45,17 @@
                 $json_array = json_decode($curl_response, true, 512, JSON_BIGINT_AS_STRING);
                 if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
                     die('error occurred: ' . $json->response->errormessage);
+                }
+
+                if(isset($json_array)) {
+                    if($json_array == true){
+                        header("Location: home.php");
+                        die();
+                    }
+                    else{
+                        echo "<font color='#FB0307'>*A Customer with the Username you provided already exists, please enter a different Username and try again.</font>";
+                        $username = "";
+                    }
                 }
             }
         }

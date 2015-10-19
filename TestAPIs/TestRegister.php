@@ -4,7 +4,7 @@ include "../design/headerSignIn.php";
 ?>
 
 <?php
-
+    //Change username to test this each time
     $service_url = "localhost:8080/register?username=JonahHwdwdill&password=1234&firstname=Jon&lastname=E&idnumber=12121&contact=021";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

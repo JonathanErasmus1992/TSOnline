@@ -48,6 +48,7 @@
 				$_SESSION['contact'] = $json_array['contact'];
 
 				header("Location: home.php");
+				die();
 			}else{
 				echo "<font color='#FB0307'>*Please ensure that the credentials you provided are correct and try again.</font>";
 			}

@@ -25,4 +25,4 @@ Open up and run each of the Tests in the Test repository directory:
 	To verify this open the DB toystore on phpMyAdmin and the tables will be all be there.
 
 	
-After you have verified that the tables have been successfully created open up your terminal in your IDE and enter the command mvn spring-boot run.
+After you have verified that the tables have been successfully created open up your terminal in your IDE and enter the command mvn spring-boot:run.
