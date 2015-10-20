@@ -25,26 +25,38 @@
       <file leaf-file-name="viewalltoys.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/design/viewalltoys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6923075">
-              <caret line="103" column="133" selection-start-line="103" selection-start-column="99" selection-end-line="103" selection-end-column="133" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
               <folding>
-                <marker date="1445327601390" expanded="true" signature="2702:3237" placeholder="..." />
-                <marker date="1445327601390" expanded="true" signature="2702:3239" placeholder="..." />
-                <marker date="1445327601390" expanded="true" signature="2702:3246" placeholder="..." />
-                <marker date="1445327601390" expanded="true" signature="2702:3252" placeholder="..." />
-                <marker date="1445327601390" expanded="true" signature="2702:3264" placeholder="..." />
-                <marker date="1445327601390" expanded="true" signature="2702:3267" placeholder="..." />
+                <marker date="1445329188036" expanded="true" signature="2702:3237" placeholder="..." />
+                <marker date="1445329188036" expanded="true" signature="2702:3239" placeholder="..." />
+                <marker date="1445329188036" expanded="true" signature="2702:3246" placeholder="..." />
+                <marker date="1445329188036" expanded="true" signature="2702:3252" placeholder="..." />
+                <marker date="1445329188036" expanded="true" signature="2702:3264" placeholder="..." />
+                <marker date="1445329188036" expanded="true" signature="2702:3267" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewselectedcategory.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/design/viewselectedcategory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5618557">
+              <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/design/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52577317">
-              <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
-              <folding />
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding>
+                <element signature="e#207#471#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,12 +103,12 @@
         <option value="$PROJECT_DIR$/design/myaccount.php" />
         <option value="$PROJECT_DIR$/design/categories.php" />
         <option value="$PROJECT_DIR$/design/register.php" />
-        <option value="$PROJECT_DIR$/design/viewselectedcategory.php" />
         <option value="$PROJECT_DIR$/TestAPIs/TestAddItemToOrderline.php" />
         <option value="$PROJECT_DIR$/design/shoppingcart.php" />
         <option value="$PROJECT_DIR$/design/signin.php" />
-        <option value="$PROJECT_DIR$/design/viewalltoys.php" />
         <option value="$PROJECT_DIR$/design/home.php" />
+        <option value="$PROJECT_DIR$/design/viewalltoys.php" />
+        <option value="$PROJECT_DIR$/design/viewselectedcategory.php" />
       </list>
     </option>
   </component>
@@ -588,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/design/viewselectedcategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1323025">
-          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestAPIs/TestItemCategory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20446736">
@@ -646,25 +651,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/design/viewalltoys.php">
+    <entry file="file://$PROJECT_DIR$/design/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6923075">
-          <caret line="103" column="133" selection-start-line="103" selection-start-column="99" selection-end-line="103" selection-end-column="133" />
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
           <folding>
-            <marker date="1445327601390" expanded="true" signature="2702:3237" placeholder="..." />
-            <marker date="1445327601390" expanded="true" signature="2702:3239" placeholder="..." />
-            <marker date="1445327601390" expanded="true" signature="2702:3246" placeholder="..." />
-            <marker date="1445327601390" expanded="true" signature="2702:3252" placeholder="..." />
-            <marker date="1445327601390" expanded="true" signature="2702:3264" placeholder="..." />
-            <marker date="1445327601390" expanded="true" signature="2702:3267" placeholder="..." />
+            <element signature="e#207#471#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/design/home.php">
+    <entry file="file://$PROJECT_DIR$/design/viewalltoys.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52577317">
-          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
+          <folding>
+            <marker date="1445329188036" expanded="true" signature="2702:3237" placeholder="..." />
+            <marker date="1445329188036" expanded="true" signature="2702:3239" placeholder="..." />
+            <marker date="1445329188036" expanded="true" signature="2702:3246" placeholder="..." />
+            <marker date="1445329188036" expanded="true" signature="2702:3252" placeholder="..." />
+            <marker date="1445329188036" expanded="true" signature="2702:3264" placeholder="..." />
+            <marker date="1445329188036" expanded="true" signature="2702:3267" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design/viewselectedcategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5618557">
+          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
           <folding />
         </state>
       </provider>

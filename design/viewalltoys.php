@@ -99,7 +99,8 @@
                     else{
                         $tmpIndex = array_search($click, $_SESSION['itemsAdded']);
                     }
-                    $_SESSION['amountOrdered_'.$click] = $_POST['amountOrdered_'.$click];
+
+                    //$_SESSION['amountOrdered_'.$click] = $_POST['amountOrdered_'.$click];
 
                     echo "(Item ID: " . $_SESSION['itemsAdded'][$tmpIndex] . " Ordered Amount: " . $_SESSION['amountOrdered_'.$click] . " )";
                     //var_dump($_POST['amountOrdered_'.$click]);
