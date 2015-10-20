@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Created by PhpStorm.
+ * User: Jonathan Erasmus
+ * Student number: 211112577
+ * Date: 10/14/2015
+ */
 	$title = "Sign In";
 	include("headerSignIn.php");
 ?>
@@ -53,8 +60,8 @@
 
 				$tmpArray = $json_array['orders'];
 				$tmpOrderID = "";
-
-				var_dump($tmpArray);
+				//var_dump($json_array);
+				//var_dump($tmpArray);
 
 				for($i = 0; $i < count($tmpArray); $i++){
 					$tmp1 = $tmpArray[$i]['id'];
@@ -71,9 +78,7 @@
 
 				$_SESSION['order_id'] = $tmpOrderID;
 
-
-
-				//header("Location: home.php");
+				header("Location: home.php");
 				die();
 			}else{
 				echo "<font color='#FB0307'>*Please ensure that the credentials you provided are correct and try again.</font>";

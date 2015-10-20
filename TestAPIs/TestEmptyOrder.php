@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Jonathan Erasmus
+ * Student number: 211112577
+ * Date: 10/14/2015
+ */
 $title = "Test Delete Order API";
 include "../design/headerSignIn.php";
 ?>
@@ -17,7 +23,7 @@ include "../design/headerSignIn.php";
     $json_array = array();
     unset($json_array);
     $json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
-    if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
+    if (isset($json_array->response->status) && $json_array->response->status == 'ERROR') {
         die('error occurred: ' . $json_array->response->errormessage);
     }
 

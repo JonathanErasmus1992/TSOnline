@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Created by PhpStorm.
+ * User: Jonathan Erasmus
+ * Student number: 211112577
+ * Date: 10/14/2015
+ */
     $title = "Shopping Cart";
     session_start();
     if(isset($_SESSION['username']) && isset($_SESSION['password'])){
@@ -30,7 +37,7 @@
     $json_array = array();
     unset($json_array);
     $json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
-    if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
+    if (isset($json_array->response->status) && $json_array->response->status == 'ERROR') {
         die('error occurred: ' . $json_array->response->errormessage);
     }
 
@@ -77,8 +84,8 @@
                 <tr>
                     <td><strong>Item no.</strong></td>
                     <td align="center"><strong>Item Name</strong></td>
-                    <td><strong>Item Category</strong></td>
-                    <td><strong>Item Price</strong></td>
+                    <td><strong>Age Group/Category</strong></td>
+                    <td><strong>Item/s Price</strong></td>
                     <td><strong>Amount Ordered</strong></td>
                 </tr>
 
@@ -93,7 +100,7 @@
                     <tr>
                         <td><label><?php echo $item->id; ?></label></td>
                         <td><label><?php echo $item->itemName; ?></label></td>
-                        <td align='center'><label>Ages: <?php echo $item->itemCategory; ?></label></td>
+                        <td align='center'><label><?php echo $item->itemCategory; ?></label></td>
                         <td><label>R <?php echo $tmpStringPrice; ?></label></td>
                         <td align='center'><label><?php echo $item->amountInStock; ?></label></td>
                         <td><input type='button' id='{$item->id}' value='Remove One' name = 'removeOne'</td>
@@ -125,40 +132,51 @@
     if(isset($_POST['emptyCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 
-            $service_url = "http://localhost:8080/order/delete?orderID=".$_SESSION['order_id'];
-            $curl = curl_init($service_url);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            $curl_response = curl_exec($curl);
-            if ($curl_response === false) {
-                $info = curl_getinfo($curl);
-                curl_close($curl);
-                die('error has occurred during curl exec. Additional info: ' . var_export($info));
-            }
-            curl_close($curl);
-            $json_array = array();
-            unset($json_array);
-            $json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
-            if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
-                die('error occurred: ' . $json_array->response->errormessage);
-            }
+
+            include "../classes/Order.php";
+
+            $tmpOrderObj = new Order();
+
+            $tmpOrderObj->emptyOrderCart($_SESSION['order_id']);
 
             $_SESSION['itemsAdded'] = array();
 
-            header("Location: ShoppingCart.php");
+            ?>
+            <script type="text/javascript">
+                window.location.replace("ShoppingCart.php");
+            </script>
+            <?php
         }
         else{
-            $_SESSION = array();
-            session_destroy();
-            header("Location: ShoppingCart.php");
+            $_SESSION['itemsAdded'] = array();
+
+            ?>
+            <script type="text/javascript">
+                window.location.replace("ShoppingCart.php");
+            </script>
+            <?php
         }
     }
 
     if(isset($_POST['saveCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 
+            include "../classes/Order.php";
+            $tmpOrderObj = new Order();
+            $tmpOrderObj->saveOrderCart();
+
+            ?>
+            <script type="text/javascript">
+                window.location.replace("ShoppingCart.php");
+            </script>
+            <?php
         }
         else{
-            header("Location: notsignedin.php");
+            ?>
+            <script type="text/javascript">
+                window.location.replace("notsignedin.php");
+            </script>
+            <?php
         }
     }
 
@@ -167,7 +185,11 @@
 
         }
         else{
-            header("Location: notsignedin.php");
+            ?>
+            <script type="text/javascript">
+                window.location.replace("notsignedin.php");
+            </script>
+            <?php
         }
     }
 
@@ -179,16 +201,36 @@
             include "../classes/Order.php";
             $tmpOrderObj = new Order();
             $tmpOrder = $tmpOrderObj->getCustomerOrder($_SESSION['customerID']);
-            $_SESSION['itemsAdded'] = array();
-            var_dump($tmpOrder);
 
+            $_SESSION['itemsAdded'] = array();
+            //var_dump($tmpOrder);
+            $tmpOrderlines = $tmpOrder['orderlines'];
+            var_dump($tmpOrder);
+            var_dump($tmpOrderlines);
+
+            for($i = 0; $i < count($tmpOrderlines); $i++){
+                $tmpID = $tmpOrderlines[$i]['id'];
+                $tmpQuantity = $tmpOrderlines[$i]['quantity'];
+                $_SESSION['itemsAdded'][] = $tmpID;
+                $_SESSION['amountOrdered_'.$tmpID] = $tmpQuantity;
+            }
+
+            ?>
+            <script type="text/javascript">
+                window.location.replace("ShoppingCart.php");
+            </script>
+            <?php
         }
         else{
-            header("Location: notsignedin.php");
+            ?>
+            <script type="text/javascript">
+                window.location.replace("notsignedin.php");
+            </script>
+            <?php
         }
     }
 ?>
 
 <?php
-include "footer.php";
+    include "footer.php";
 ?>
