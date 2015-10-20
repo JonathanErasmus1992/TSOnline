@@ -15,6 +15,7 @@ else{
     //Use -> instead of . to get class object methods
 
     $cartPrice = 0;
+    $tmpStringCartPrice = 0;
 
     $service_url = "http://localhost:8080/item/all";
     $curl = curl_init($service_url);
@@ -68,7 +69,7 @@ else{
     }
 ?>
 
-    <form action="Oldshoppingcart.php" method = "POST">
+    <form action="ShoppingCart.php" method = "POST">
         <fieldset>
             <legend>Please note that you will only be able to checkout your Shopping Cart once Signed In</legend>
             </br>
@@ -109,6 +110,7 @@ else{
             </br>
 
             <p align="center">
+                <input type="submit" value="Retrieve My Shopping Cart" name = "retrieveCart"/>
                 <input type="submit" value="Empty My Shopping Cart" name = "emptyCart"/>
                 <input type="submit" value="Save My Shopping Cart" name = "saveCart"/>
                 </br>
@@ -120,6 +122,36 @@ else{
     </form>
 
 <?php
+    if(isset($_POST['emptyCart'])){
+        if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+
+            $service_url = "http://localhost:8080/order/delete?orderID=".$_SESSION['order_id'];
+            $curl = curl_init($service_url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $curl_response = curl_exec($curl);
+            if ($curl_response === false) {
+                $info = curl_getinfo($curl);
+                curl_close($curl);
+                die('error has occurred during curl exec. Additional info: ' . var_export($info));
+            }
+            curl_close($curl);
+            $json_array = array();
+            unset($json_array);
+            $json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
+            if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
+                die('error occurred: ' . $json_array->response->errormessage);
+            }
+
+            $_SESSION['itemsAdded'] = array();
+
+            header("Location: ShoppingCart.php");
+        }
+        else{
+            $_SESSION = array();
+            session_destroy();
+            header("Location: ShoppingCart.php");
+        }
+    }
     if(isset($_POST['saveCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 

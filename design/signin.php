@@ -63,6 +63,10 @@
 					}
 				}
 
+				include("../classes/Order.php");
+				$tmpOrderClass = new Order();
+				$tmpOrderClass->getAndOrCreateCustomerOrder($_SESSION['customerID']);
+
 				$_SESSION['order_id'] = $tmpOrderID;
 
 				header("Location: home.php");

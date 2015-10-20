@@ -17,7 +17,7 @@
     $json_array = array();
     unset($json_array);
     $json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
-    if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
+    if (isset($json_array->response->status) && $json_array->response->status == 'ERROR') {
         die('error occurred: ' . $json_array->response->errormessage);
     }
 
