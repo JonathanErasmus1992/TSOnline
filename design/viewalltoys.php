@@ -47,6 +47,8 @@
 
     sort($itemList);
     $addItem = array();
+    //var_dump($itemList);
+    //$tmpAmountOrder = 1;
 ?>
 
     <form action = 'viewalltoys.php' method = 'post'>
@@ -73,7 +75,7 @@
 			  	<td align='center'><label>Ages: <?php echo $item->itemCategory; ?></label></td>
 			  	<td><label>R <?php echo $tmpStringPrice; ?></label></td>
 			  	<td align='center'><label><?php echo $item->amountInStock; ?></label></td>
-			  	<td align='center'><input type='number' value='1' name='amountOrdered' min='1' max='<?php echo $item->amountInStock; ?>' </td>
+			  	<td align="center"><input type="number" value="1" name="<?php echo 'amountOrdered_'.$item->id ?>" min="1" max="<?php echo $item->amountInStock; ?>" </td>
 			  	<td><input type="submit" value="Add To Cart" name="<?php $clicked[] = $item->id; echo $item->id; ?>" </td>
               	</tr>
               	<?php
@@ -83,11 +85,35 @@
             <?php
             foreach($clicked as $click){
                 if(isset($_POST[$click])){
-                    echo "You clicked ".$click;
+                    //echo "You clicked ".$click;
+                    $tmpIndex = 0;
+                    if(isset($_SESSION['itemsAdded'])){
+
+                    }
+                    if(in_array($click, $_SESSION['itemsAdded']) == false){
+                        $_SESSION['itemsAdded'][] = $click;
+                        //echo $click;
+                        //$tmpItemOrderedAmount = $_POST['amountOrdered_'.$click];
+                        $tmpIndex = array_search($click, $_SESSION['itemsAdded']);
+                    }
+                    else{
+                        $tmpIndex = array_search($click, $_SESSION['itemsAdded']);
+                    }
+                    $_SESSION['amountOrdered_'.$click] = $_POST['amountOrdered_'.$click];
+
+                    echo "(Item ID: " . $_SESSION['itemsAdded'][$tmpIndex] . " Ordered Amount: " . $_SESSION['amountOrdered_'.$click] . " )";
+                    //var_dump($_POST['amountOrdered_'.$click]);
+
+                    /*for($i = 0; $i < count($_SESSION['itemsAdded']); $i++){
+                        echo "(Item ID: ".$_SESSION['itemsAdded'][$i]." Ordered Amount: ".$_POST['amountOrdered_'.$click]." )";
+                        //echo $_POST['amountOrdered_'.$click];
+                        /*if ($_SESSION['itemsAdded'][$i] == $click){
+                        }
+                        echo "(Item ID: ".$_SESSION['itemsAdded'][$i]." Ordered Amount: ".$_POST['amountOrdered_'.$click]." )";
+                    }*/
                 }
             }
-
-            var_dump($clicked);
+            //var_dump($clicked);
             ?>
         </fieldset>
     </form>

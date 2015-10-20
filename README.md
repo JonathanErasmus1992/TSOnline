@@ -10,6 +10,7 @@ Start up WampServer or server you are using.
 
 Open up your phpMyAdmin and create a database with no tables called toystore.
 
+Or if the DB toystore already exists delete/drop all tables in it.
 
 After that step open up application.properties on TSBackend:
 	Change the DB URL to match your localhost for wamp/xamp.
