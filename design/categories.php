@@ -29,7 +29,6 @@
 				</tr>
 			</table>
 			</br>
-
 		</fieldset>
 	</form>
 
@@ -54,7 +53,7 @@
 		<?php
 	}
 	if(isset($_POST['cat3'])){
-		$_SESSION['selectedCategory'] = "10-13+";
+		$_SESSION['selectedCategory'] = "10-13 or Older";
 		echo "PURPLE";
 		?>
 			<script type="text/javascript">

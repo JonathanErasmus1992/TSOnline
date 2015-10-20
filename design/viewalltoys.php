@@ -49,7 +49,7 @@
                 <tr>
                     <td><strong>Item no.</strong></td>
                     <td align="center"><strong>Item Name</strong></td>
-                    <td><strong>Item Category</strong></td>
+                    <td><strong>Age Group/Category</strong></td>
                     <td><strong>Item Price</strong></td>
                     <td><strong>Amount In Stock</strong></td>
                     <td><strong>Order Amount</strong></td>
@@ -63,7 +63,7 @@
                 <tr>
 	          	<td><label><?php echo $item->id; ?></label></td>
 			  	<td><label><?php echo $item->itemName; ?></label></td>
-			  	<td align='center'><label>Ages: <?php echo $item->itemCategory; ?></label></td>
+			  	<td align='center'><label><?php echo $item->itemCategory; ?></label></td>
 			  	<td><label>R <?php echo $tmpStringPrice; ?></label></td>
 			  	<td align='center'><label><?php echo $item->amountInStock; ?></label></td>
 			  	<td align="center"><input type="number" value="1" name="<?php echo 'amountOrdered_'.$item->id ?>" min="1" max="<?php echo $item->amountInStock; ?>" </td>
@@ -107,6 +107,8 @@
             }
             //var_dump($clicked);
             ?>
+            </br>
+            <p align="center">When You Wish To Checkout your Order Please click Trolley icon on top right hand corner.</br>Thank You</p>
         </fieldset>
     </form>
 <?php

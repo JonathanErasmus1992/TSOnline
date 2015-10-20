@@ -54,6 +54,8 @@
 				$tmpArray = $json_array['orders'];
 				$tmpOrderID = "";
 
+				var_dump($tmpArray);
+
 				for($i = 0; $i < count($tmpArray); $i++){
 					$tmp1 = $tmpArray[$i]['id'];
 					$tmp2 = true;
@@ -65,11 +67,13 @@
 
 				include("../classes/Order.php");
 				$tmpOrderClass = new Order();
-				$tmpOrderClass->getAndOrCreateCustomerOrder($_SESSION['customerID']);
+				$tmpOrderClass->createCustomerOrder($_SESSION['customerID']);
 
 				$_SESSION['order_id'] = $tmpOrderID;
 
-				header("Location: home.php");
+
+
+				//header("Location: home.php");
 				die();
 			}else{
 				echo "<font color='#FB0307'>*Please ensure that the credentials you provided are correct and try again.</font>";

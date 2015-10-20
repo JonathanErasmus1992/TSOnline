@@ -1,12 +1,12 @@
 <?php
-$title = "Shopping Cart";
-session_start();
-if(isset($_SESSION['username']) && isset($_SESSION['password'])){
-    include "headerLogOut.php";
-}
-else{
-    include "headerSignIn.php";
-}
+    $title = "Shopping Cart";
+    session_start();
+    if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+        include "headerLogOut.php";
+    }
+    else{
+        include "headerSignIn.php";
+    }
 ?>
 
 <?php
@@ -152,6 +152,7 @@ else{
             header("Location: ShoppingCart.php");
         }
     }
+
     if(isset($_POST['saveCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 
@@ -160,8 +161,26 @@ else{
             header("Location: notsignedin.php");
         }
     }
+
     if(isset($_POST['checkoutCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+
+        }
+        else{
+            header("Location: notsignedin.php");
+        }
+    }
+
+    if(isset($_POST['retrieveCart'])){
+        if(isset($_SESSION['username']) && isset($_SESSION['password'])){
+            /*Change values of $_SESSION[itemsAdded] and $_SESSION[amountOrdered_'.tmpAmount] to zero/empty
+              Loop through array from service call and add each value retrieved to there respective SESSION variable
+             */
+            include "../classes/Order.php";
+            $tmpOrderObj = new Order();
+            $tmpOrder = $tmpOrderObj->getCustomerOrder($_SESSION['customerID']);
+            $_SESSION['itemsAdded'] = array();
+            var_dump($tmpOrder);
 
         }
         else{
