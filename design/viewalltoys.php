@@ -37,18 +37,9 @@
         $item->createItem($items->id, $items->name, $items->category, $items->price, $items->quantity );
         $itemList[ ] = $item;
     }
-    /*print_r($itemList);
-     *Prints the array items to screen showing how each item is displayed from the array in a readable way
-     * var_dump($itemList);
-     * Prints the array items to screen showing how the compiler or processor interprets the code*/
-    /*foreach($itemList as $item){
-        echo $item['id'], " ", $item['itemName'], " ", $item['itemPrice'], " ", $item['amountInStock'];
-    }*/
 
     sort($itemList);
     $addItem = array();
-    //var_dump($itemList);
-    //$tmpAmountOrder = 1;
 ?>
 
     <form action = 'viewalltoys.php' method = 'post'>
@@ -100,9 +91,9 @@
                         $tmpIndex = array_search($click, $_SESSION['itemsAdded']);
                     }
 
-                    //$_SESSION['amountOrdered_'.$click] = $_POST['amountOrdered_'.$click];
+                    $_SESSION['amountOrdered_'.$click] = $_POST['amountOrdered_'.$click];
 
-                    echo "(Item ID: " . $_SESSION['itemsAdded'][$tmpIndex] . " Ordered Amount: " . $_SESSION['amountOrdered_'.$click] . " )";
+                    //echo "(Item ID: " . $_SESSION['itemsAdded'][$tmpIndex] . " Ordered Amount: " . $_SESSION['amountOrdered_'.$click] . " )";
                     //var_dump($_POST['amountOrdered_'.$click]);
 
                     /*for($i = 0; $i < count($_SESSION['itemsAdded']); $i++){

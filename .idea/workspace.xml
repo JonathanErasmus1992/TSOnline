@@ -25,38 +25,19 @@
       <file leaf-file-name="viewalltoys.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/design/viewalltoys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693">
-              <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
-              <folding>
-                <marker date="1445329188036" expanded="true" signature="2702:3237" placeholder="..." />
-                <marker date="1445329188036" expanded="true" signature="2702:3239" placeholder="..." />
-                <marker date="1445329188036" expanded="true" signature="2702:3246" placeholder="..." />
-                <marker date="1445329188036" expanded="true" signature="2702:3252" placeholder="..." />
-                <marker date="1445329188036" expanded="true" signature="2702:3264" placeholder="..." />
-                <marker date="1445329188036" expanded="true" signature="2702:3267" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewselectedcategory.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/design/viewselectedcategory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5618557">
-              <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/design/home.php">
+      <file leaf-file-name="TestShoppingCart.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/design/TestShoppingCart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding>
-                <element signature="e#207#471#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="3.2692308">
+              <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,8 +45,48 @@
       <file leaf-file-name="signin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/design/signin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+            <state vertical-scroll-proportion="-9.307693">
+              <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="categories.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/design/categories.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.28288287">
+              <caret line="36" column="131" selection-start-line="36" selection-start-column="131" selection-end-line="36" selection-end-column="131" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="headerLogOut.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/design/headerLogOut.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.692307">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="headerSignIn.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/design/headerSignIn.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.692307">
+              <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shoppingcart.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/design/shoppingcart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="65" selection-end-column="115" />
               <folding />
             </state>
           </provider>
@@ -92,8 +113,6 @@
         <option value="$PROJECT_DIR$/TestAPIs/TestLogin.php" />
         <option value="$PROJECT_DIR$/design/viewall.php" />
         <option value="$PROJECT_DIR$/TestAPIs/TestAllItems.php" />
-        <option value="$PROJECT_DIR$/design/headerSignIn.php" />
-        <option value="$PROJECT_DIR$/design/headerLogOut.php" />
         <option value="$PROJECT_DIR$/TestAPIs/TestGetOrder.php" />
         <option value="$PROJECT_DIR$/TestAPIs/TestRegister.php" />
         <option value="$PROJECT_DIR$/TestAPIs/TestGetOrderDate.php" />
@@ -101,14 +120,17 @@
         <option value="$PROJECT_DIR$/TestAPIs/TestChangePassword.php" />
         <option value="$PROJECT_DIR$/TestAPIs/TestItemCategory.php" />
         <option value="$PROJECT_DIR$/design/myaccount.php" />
-        <option value="$PROJECT_DIR$/design/categories.php" />
         <option value="$PROJECT_DIR$/design/register.php" />
         <option value="$PROJECT_DIR$/TestAPIs/TestAddItemToOrderline.php" />
-        <option value="$PROJECT_DIR$/design/shoppingcart.php" />
         <option value="$PROJECT_DIR$/design/signin.php" />
         <option value="$PROJECT_DIR$/design/home.php" />
+        <option value="$PROJECT_DIR$/design/shoppingcart.php" />
+        <option value="$PROJECT_DIR$/design/headerSignIn.php" />
         <option value="$PROJECT_DIR$/design/viewalltoys.php" />
         <option value="$PROJECT_DIR$/design/viewselectedcategory.php" />
+        <option value="$PROJECT_DIR$/design/headerLogOut.php" />
+        <option value="$PROJECT_DIR$/design/TestShoppingCart.php" />
+        <option value="$PROJECT_DIR$/design/categories.php" />
       </list>
     </option>
   </component>
@@ -312,13 +334,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestAPIs/TestRegister.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/design/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -500,20 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/design/headerSignIn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46735394">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/design/headerLogOut.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46735394">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestAPIs/TestAllItems.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.080756016">
@@ -621,21 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/design/shoppingcart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51890033">
-          <caret line="59" column="82" selection-start-line="59" selection-start-column="82" selection-end-line="59" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/design/categories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54810995">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="23" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestAPIs/TestAddItemToOrderline.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.1153846">
@@ -643,18 +629,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/design/signin.php">
+    <entry file="file://$PROJECT_DIR$/design/shoppingcart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="65" selection-end-column="115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design/headerSignIn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design/viewselectedcategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31443298">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/design/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.26288658">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
           <folding>
             <element signature="e#207#471#0#PHP" expanded="true" />
           </folding>
@@ -663,23 +665,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/design/viewalltoys.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
-          <folding>
-            <marker date="1445329188036" expanded="true" signature="2702:3237" placeholder="..." />
-            <marker date="1445329188036" expanded="true" signature="2702:3239" placeholder="..." />
-            <marker date="1445329188036" expanded="true" signature="2702:3246" placeholder="..." />
-            <marker date="1445329188036" expanded="true" signature="2702:3252" placeholder="..." />
-            <marker date="1445329188036" expanded="true" signature="2702:3264" placeholder="..." />
-            <marker date="1445329188036" expanded="true" signature="2702:3267" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/design/viewselectedcategory.php">
+    <entry file="file://$PROJECT_DIR$/design/signin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5618557">
-          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+        <state vertical-scroll-proportion="-9.307693">
+          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design/headerLogOut.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design/TestShoppingCart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2692308">
+          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design/categories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28288287">
+          <caret line="36" column="131" selection-start-line="36" selection-start-column="131" selection-end-line="36" selection-end-column="131" />
           <folding />
         </state>
       </provider>

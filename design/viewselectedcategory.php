@@ -9,7 +9,7 @@
     }
 ?>
 <?php
-    //echo $_SESSION['selectedCategory'];
+
 ?>
 
 <?php
@@ -35,7 +35,6 @@
     }
 
     foreach($json_array as $items){
-        //echo "<pre>{$item->name}  {$item->category}  {$item->price} {$item->quantity}<br/></pre>";
         $item = new Item();
         $item->createItem($items->id, $items->name, $items->category, $items->price, $items->quantity );
         $itemList[ ] = $item;
