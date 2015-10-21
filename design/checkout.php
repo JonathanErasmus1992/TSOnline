@@ -7,7 +7,7 @@
  */
 
     $title = "Checkout";
-    include "headerLogOut.php";
+    include "headerCheckout.php";
 ?>
 
 <?php

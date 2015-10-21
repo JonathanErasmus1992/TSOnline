@@ -22,7 +22,7 @@
             <li><a Href = "purchasehistory.php">View History</a></li>
             <li><a Href = "myaccount.php">My Account</a></li>
             <li><a Href = "logout.php">Logout</a></li>
-            <li><a Href = "ShoppingCart.php"><img src="../media/car_35x35.png"</a></a></li>
+            <li><a Href = "ShoppingCart.php"><img src="../media/car_35x35.png"/></a></li>
         </ul>
     </nav>
 

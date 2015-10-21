@@ -22,7 +22,7 @@
                 <li><a Href = "#"></a></li>
                 <li><a Href = "register.php">Register</a></li>
                 <li><a Href = "signin.php">Sign In</a></li>
-                <li><a Href = "ShoppingCart.php"><img src="../media/car_35x35.png"</a></a></li>
+                <li><a Href = "ShoppingCart.php"><img src="../media/car_35x35.png"/></a></li>
             </ul>
     	</nav>
     
