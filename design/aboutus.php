@@ -14,7 +14,10 @@
 		include "headerSignIn.php";
 	}
 ?>
-<p>About Us</p>
+	<h4 align="center">Developed By:<br>Jonathan Erasmus Student Number: 211112577<br>Jarryd Pretorius Student Number: 206155247</h4>
+	</br>
+	<p align="center"><img src="../media/aboutUS.jpg" </p>
+
 <?php
 	include "footer.php";
 ?>

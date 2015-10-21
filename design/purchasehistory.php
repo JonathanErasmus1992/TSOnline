@@ -15,7 +15,7 @@
 		include "headerSignIn.php";
 	}
 ?>
-<p>Purchase History</p>
+	<p align="center"><img src="../media/underConstruction.jpg" </p>
 <?php
 	include "footer.php";
 ?>

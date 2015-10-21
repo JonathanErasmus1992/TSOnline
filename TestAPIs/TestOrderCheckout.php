@@ -12,7 +12,7 @@
 
 <?php
 
-    $service_url = "http://localhost:8080/order/checkout?orderID=2&customerID=2";
+    $service_url = "http://localhost:8080/order/checkout?orderID=7&customerID=3";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);
@@ -27,16 +27,7 @@
         die('error occurred: ' . $json_array->response->errormessage);
     }
 
-    if(isset($curl_response)) {
-        if($curl_response == ""){
-            echo "GREEN BLUE YELLOW";
-        }
-        else{
-            echo $curl_response;
-        }
-    }else{
-        echo "BLUE BLUE BLUE";
-    }
+    var_dump($json_array);
 
 ?>
 

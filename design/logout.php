@@ -27,18 +27,30 @@ $title = "Logout";
     if(isset($_POST['saveAndLogout'])){
 
         //Save shopping cart code to go above over here
+
+        include "../classes/Order.php";
+        $tmpOrderObj = new Order();
+        $tmpOrderObj->saveOrderCart();
+
+        ?>
+        <script type="text/javascript">
+            window.location.replace("home.php");
+        </script>
+        <?php
+
         session_start();
         $_SESSION = array();
         session_destroy();
-        header("Location: home.php");
-        die();
     }
     else if(isset($_POST['logout'])){
         session_start();
         $_SESSION = array();
         session_destroy();
-        header("Location: home.php");
-        die();
+        ?>
+        <script type="text/javascript">
+            window.location.replace("home.php");
+        </script>
+        <?php
     }
 ?>
 

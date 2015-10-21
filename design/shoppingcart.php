@@ -182,7 +182,13 @@
 
     if(isset($_POST['checkoutCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
-
+            ?>
+            <script type="text/javascript">
+                if(confirm("Are your sure you wish to checkout your current Shopping Cart?")){
+                    window.location.replace("checkout.php");
+                }
+            </script>
+            <?php
         }
         else{
             ?>

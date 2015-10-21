@@ -99,7 +99,7 @@ class Order
         }
     }
 
-    public function saveOrderCart($tmpOrderID, $tmpItemID, $tmpAmount){
+    public function saveOrderCart(){
 
         //Create Loop with Session Data to add all the items in cart to orderline etc.
         //Don't need to send any varaibles through can call session in class
@@ -150,6 +150,31 @@ class Order
         if (isset($json_array->response->status) && $json_array->response->status == 'ERROR') {
             die('error occurred: ' . $json_array->response->errormessage);
         }
+    }
+
+    public function checkOutShoppingCartOrder(){
+
+        session_start();
+
+        $tmpCustomerID = $_SESSION['customerID'];
+        $tmpOrderID = $_SESSION['order_id'];
+
+        $service_url = "http://localhost:8080/order/checkout?orderID=".$tmpOrderID."&customerID=".$tmpCustomerID;
+        $curl = curl_init($service_url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $curl_response = curl_exec($curl);
+        if ($curl_response === false) {
+            $info = curl_getinfo($curl);
+            curl_close($curl);
+            die('error has occurred during curl exec. Additional info: ' . var_export($info));
+        }
+        curl_close($curl);
+        $json_array = json_decode($curl_response, true, 512, JSON_BIGINT_AS_STRING);
+        if (isset($json_array->response->status) && $json_array->response->status == 'ERROR') {
+            die('error occurred: ' . $json_array->response->errormessage);
+        }
+
+        return $json_array;
     }
 }
 ?>

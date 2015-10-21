@@ -78,8 +78,12 @@
 
 				$_SESSION['order_id'] = $tmpOrderID;
 
-				header("Location: home.php");
-				die();
+				?>
+				<script type="text/javascript">
+					alert("Customer Login Successful.")
+					window.location.replace("home.php");
+				</script>
+				<?php
 			}else{
 				echo "<font color='#FB0307'>*Please ensure that the credentials you provided are correct and try again.</font>";
 			}

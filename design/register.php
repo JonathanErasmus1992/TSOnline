@@ -57,8 +57,12 @@
 
                 if(isset($json_array)) {
                     if($json_array == true){
-                        header("Location: home.php");
-                        die();
+                        ?>
+                        <script type="text/javascript">
+                            alert("Customer has been successfully created.")
+                            window.location.replace("home.php");
+                        </script>
+                        <?php
                     }
                     else{
                         echo "<font color='#FB0307'>*A Customer with the Username you provided already exists, please enter a different Username and try again.</font>";

@@ -7,9 +7,22 @@
  */
 
     $title = "Checkout";
-    include "headerLogOut.php.php";
+    include "headerLogOut.php";
 ?>
-    <p>Checkout Invoice</p>
+
+<?php
+    include "../classes/Order.php";
+    $tmpOrderObj = new Order();
+    $tmpInvoice = $tmpOrderObj->checkOutShoppingCartOrder();
+
+    //var_dump($tmpInvoice);
+    if(is_null($tmpInvoice)){
+        echo "<h4 align='center'>No items in current Order</h4>";
+    }else{
+
+    }
+?>
+
 <?php
     include "footer.php";
 ?>
