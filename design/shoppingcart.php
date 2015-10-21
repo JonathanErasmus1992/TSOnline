@@ -103,8 +103,7 @@
                         <td align='center'><label><?php echo $item->itemCategory; ?></label></td>
                         <td><label>R <?php echo $tmpStringPrice; ?></label></td>
                         <td align='center'><label><?php echo $item->amountInStock; ?></label></td>
-                        <td><input type='button' id='{$item->id}' value='Remove One' name = 'removeOne'</td>
-                        <td><input type='button' id='{$item->id}' value='Remove All' name = 'removeAll'</td>
+                        <td><input type='button' id='{$item->id}' value='Remove Item From Cart' name = 'removeItem'</td>
                     </tr>
                     <?php
                 }
@@ -161,15 +160,24 @@
     if(isset($_POST['saveCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 
-            include "../classes/Order.php";
-            $tmpOrderObj = new Order();
-            $tmpOrderObj->saveOrderCart();
+            if(isset($_SESSION['itemsAdded'])){
+                include "../classes/Order.php";
+                $tmpOrderObj = new Order();
+                $tmpOrderObj->saveOrderCart();
 
-            ?>
-            <script type="text/javascript">
-                window.location.replace("ShoppingCart.php");
-            </script>
-            <?php
+                ?>
+                <script type="text/javascript">
+                    alert("Current Shopping Cart has been saved.")
+                    window.location.replace("ShoppingCart.php");
+                </script>
+                <?php
+            }else{
+                ?>
+                <script type="text/javascript">
+                    alert("There are no items in your current shopping cart");
+                </script>
+                <?php
+            }
         }
         else{
             ?>
@@ -182,13 +190,22 @@
 
     if(isset($_POST['checkoutCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
-            ?>
-            <script type="text/javascript">
-                if(confirm("Are your sure you wish to checkout your current Shopping Cart?")){
-                    window.location.replace("checkout.php");
-                }
-            </script>
-            <?php
+
+            if(isset($_SESSION['itemsAdded'])){
+                ?>
+                <script type="text/javascript">
+                    if(confirm("Are your sure you wish to checkout your current Shopping Cart?")){
+                        window.location.replace("checkout.php");
+                    }
+                </script>
+                <?php
+            }else{
+                ?>
+                <script type="text/javascript">
+                    alert("There are no items in your current shopping cart");
+                </script>
+                <?php
+            }
         }
         else{
             ?>
@@ -207,18 +224,33 @@
             include "../classes/Order.php";
             $tmpOrderObj = new Order();
             $tmpOrder = $tmpOrderObj->getCustomerOrder($_SESSION['customerID']);
+            $tmpItemList = $tmpOrderObj->getItemsList();
 
             $_SESSION['itemsAdded'] = array();
             //var_dump($tmpOrder);
             $tmpOrderlines = $tmpOrder['orderlines'];
-            var_dump($tmpOrder);
-            var_dump($tmpOrderlines);
+            //var_dump($tmpOrder);
+            //var_dump($tmpOrderlines);
 
             for($i = 0; $i < count($tmpOrderlines); $i++){
-                $tmpID = $tmpOrderlines[$i]['id'];
+                $tmpOrderLineID = $tmpOrderlines[$i]['id'];
+                //var_dump($tmpOrderLineID);
                 $tmpQuantity = $tmpOrderlines[$i]['quantity'];
-                $_SESSION['itemsAdded'][] = $tmpID;
-                $_SESSION['amountOrdered_'.$tmpID] = $tmpQuantity;
+                //var_dump($tmpQuantity);
+                //$tmpItemID = "";
+                //$_SESSION['itemsAdded'][] = $tmpID;
+
+                for($j = 0; $j < count($tmpItemList); $j++){
+                    $tmpOrderlineList = $tmpItemList[$j]['orderlines'];
+                    for($k = 0; $k < count($tmpOrderlineList); $k++){
+                        $tmpID = $tmpOrderlineList[$k]['id'];
+                        if($tmpID == $tmpOrderLineID){
+                            $_SESSION['itemsAdded'][] = $tmpItemList[$j]['id'];
+                            $tmp = $tmpItemList[$j]['id'];
+                            $_SESSION['amountOrdered_'.$tmp] = $tmpQuantity;
+                        }
+                    }
+                }
             }
 
             ?>
@@ -226,6 +258,7 @@
                 window.location.replace("ShoppingCart.php");
             </script>
             <?php
+
         }
         else{
             ?>

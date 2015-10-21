@@ -28,9 +28,25 @@ $title = "Logout";
 
         //Save shopping cart code to go above over here
 
-        include "../classes/Order.php";
-        $tmpOrderObj = new Order();
-        $tmpOrderObj->saveOrderCart();
+        if(isset($_SESSION['itemsAdded'])){
+
+            include "../classes/Order.php";
+            $tmpOrderObj = new Order();
+            $tmpOrderObj->saveOrderCart();
+
+            session_start();
+            $_SESSION = array();
+            session_destroy();
+
+            ?>
+            <script type="text/javascript">
+                window.location.replace("home.php");
+            </script>
+            <?php
+        }
+        else{
+            window.location.replace("home.php");
+        }
 
         ?>
         <script type="text/javascript">
@@ -38,9 +54,6 @@ $title = "Logout";
         </script>
         <?php
 
-        session_start();
-        $_SESSION = array();
-        session_destroy();
     }
     else if(isset($_POST['logout'])){
         session_start();

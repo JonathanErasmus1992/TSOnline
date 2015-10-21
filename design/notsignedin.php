@@ -13,10 +13,18 @@
 
 <?php
     if(isset($_POST['signIn'])){
-        header("Location: signin.php");
+        ?>
+        <script type="text/javascript">
+            window.location.replace("signin.php");
+        </script>
+        <?php
     }
     if(isset($_POST['registerCust'])){
-        header("Location: register.php");
+        ?>
+        <script type="text/javascript">
+            window.location.replace("register.php");
+        </script>
+        <?php
     }
  ?>
 

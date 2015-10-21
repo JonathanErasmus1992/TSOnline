@@ -22,19 +22,19 @@ include "../design/headerSignIn.php";
     curl_close($curl);
     $json_array = array();
     unset($json_array);
-    $json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
+    $json_array = json_decode($curl_response, true, 512, JSON_BIGINT_AS_STRING);
     if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
         die('error occurred: ' . $json_array->response->errormessage);
     }
 
     if(isset($json_array)) {
-        var_dump($json_array);
+        //var_dump($json_array);
 
         $itemList = array();
 
         $itemList = $json_array;
 
-        var_dump($itemList);
+        var_dump($itemList[1]);
 
         foreach($json_array as $item){
             echo "<pre>{$item->name}  {$item->category}  {$item->price} {$item->quantity}<br/></pre>";

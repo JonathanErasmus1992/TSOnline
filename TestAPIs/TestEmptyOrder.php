@@ -10,7 +10,8 @@ include "../design/headerSignIn.php";
 ?>
 
 <?php
-    $service_url = "http://localhost:8080/order/delete?orderID=2";
+    //Change to match orderID
+    $service_url = "http://localhost:8080/order/delete?orderID=9";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);
