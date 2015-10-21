@@ -130,6 +130,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="design" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -517,30 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.423077">
-          <caret line="203" column="30" selection-start-line="203" selection-start-column="30" selection-end-line="203" selection-end-column="30" />
-          <folding>
-            <element signature="n#createCustomerOrder#0;n#Order#0;n#!!top" expanded="false" />
-            <element signature="n#getOrderDate#0;n#Order#0;n#!!top" expanded="false" />
-            <element signature="n#getCustomerOrder#0;n#Order#0;n#!!top" expanded="false" />
-            <element signature="n#getItemsList#0;n#Order#0;n#!!top" expanded="false" />
-            <element signature="n#removeItemFromOrder#0;n#Order#0;n#!!top" expanded="false" />
-            <element signature="n#saveOrderCart#0;n#Order#0;n#!!top" expanded="false" />
-            <element signature="n#emptyOrderCart#0;n#Order#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/design/aboutus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/design/categories.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="42.53846">
@@ -652,10 +656,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/design/checkout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6786941">
-          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.55498284">
+          <caret line="46" column="78" selection-start-line="46" selection-start-column="78" selection-end-line="46" selection-end-column="78" />
           <folding>
             <element signature="e#6#112#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design/aboutus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49656358">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52577317">
+          <caret line="179" column="48" selection-start-line="179" selection-start-column="48" selection-end-line="179" selection-end-column="48" />
+          <folding>
+            <element signature="n#createCustomerOrder#0;n#Order#0;n#!!top" expanded="false" />
+            <element signature="n#getOrderDate#0;n#Order#0;n#!!top" expanded="false" />
+            <element signature="n#getCustomerOrder#0;n#Order#0;n#!!top" expanded="false" />
+            <element signature="n#getItemsList#0;n#Order#0;n#!!top" expanded="false" />
+            <element signature="n#removeItemFromOrder#0;n#Order#0;n#!!top" expanded="false" />
+            <element signature="n#saveOrderCart#0;n#Order#0;n#!!top" expanded="false" />
+            <element signature="n#emptyOrderCart#0;n#Order#0;n#!!top" expanded="false" />
+            <element signature="n#checkOutShoppingCartOrder#0;n#Order#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

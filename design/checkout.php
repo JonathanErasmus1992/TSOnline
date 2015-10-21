@@ -24,7 +24,7 @@
         $tmpTotalPrice = $tmpInvoice['totalPrice'];
         $tmpItemAmount = count($tmpInvoice['orderlines']);
         $tmpInvoiceID = $tmpInvoice['id'];
-
+        $tmpOrderDate = $tmpOrderObj->getOrderDate($_SESSION['order_id']);
         $tmpStringOrderPrice = number_format($tmpTotalPrice, 2);
     }
 ?>
@@ -42,6 +42,9 @@
                 </tr>
                 <tr>
                     <td align="center"><?php echo "Total Price: ".$tmpStringOrderPrice?></td>
+                </tr>
+                <tr>
+                    <td align="center"><?php echo "Order Date: ".$tmpOrderDate?></td>
                 </tr>
             </table>
             <p align="center"><input type="submit" name="okCheckout" value="Back To Toys 4 All Home"/></p>
