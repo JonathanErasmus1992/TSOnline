@@ -103,7 +103,7 @@
                         <td align='center'><label><?php echo $item->itemCategory; ?></label></td>
                         <td><label>R <?php echo $tmpStringPrice; ?></label></td>
                         <td align='center'><label><?php echo $item->amountInStock; ?></label></td>
-                        <td><input type='button' id='{$item->id}' value='Remove Item From Cart' name = 'removeItem'</td>
+                        <td><input type='submit' value='Remove Item From Cart' name = '<?php $removeList[] = $item->id; echo $item->id; ?>'</td>
                     </tr>
                     <?php
                 }
@@ -128,6 +128,24 @@
     </form>
 
 <?php
+
+    if(isset($_SESSION['itemsAdded'])){
+        foreach($removeList as $click){
+            if(isset($_POST[$click])){
+                //echo "You clicked ".$click;
+                $tmpIndex = 0;
+                $tmpIndex = array_search($click, $_SESSION['itemsAdded']);
+                unset($_SESSION['itemsAdded'][$tmpIndex]);
+
+                ?>
+                <script type="text/javascript">
+                    window.location.replace("ShoppingCart.php");
+                </script>
+                <?php
+            }
+        }
+    }
+
     if(isset($_POST['emptyCart'])){
         if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 
@@ -148,6 +166,7 @@
         }
         else{
             $_SESSION['itemsAdded'] = array();
+            unset($_SESSION['itemsAdded']);
 
             ?>
             <script type="text/javascript">

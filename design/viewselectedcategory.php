@@ -98,6 +98,13 @@ sort($itemList);
                     }
                     $_SESSION['amountOrdered_'.$click] = $_POST['amountOrdered_'.$click];
 
+
+                    ?>
+                    <script type="text/javascript">
+                        window.location.replace("viewselectedcategory.php");
+                    </script>
+                    <?php
+
                     //echo "(Item ID: " . $_SESSION['itemsAdded'][$tmpIndex] . " Ordered Amount: " . $_SESSION['amountOrdered_'.$click] . " )";
                 }
             }

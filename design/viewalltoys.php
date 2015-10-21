@@ -100,6 +100,12 @@
 
                     $_SESSION['amountOrdered_'.$click] = $_POST['amountOrdered_'.$click];
 
+                    ?>
+                    <script type="text/javascript">
+                        window.location.replace("viewalltoys.php");
+                    </script>
+                    <?php
+
                     //echo "(Item ID: " . $_SESSION['itemsAdded'][$tmpIndex] . " Ordered Amount: " . $_SESSION['amountOrdered_'.$click] . " )";
                     //var_dump($_POST['amountOrdered_'.$click]);
 
