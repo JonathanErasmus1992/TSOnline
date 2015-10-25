@@ -58,42 +58,34 @@
 					echo "<p align='center'><font color='#FB0307'>*Please ensure that the Password and Confirm Password match and try again.</font></p>";
 				}else{
 					//Code to save new password. Change Password Service
-					$service_url = "http://localhost:8080/customer/changepassword?customerID=".$_SESSION['customerID'].
-						"&newPassword=".$password;
-					$curl = curl_init($service_url);
-					curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-					$curl_response = curl_exec($curl);
-					if ($curl_response === false) {
-						$info = curl_getinfo($curl);
-						curl_close($curl);
-						die('error has occurred during curl exec. Additional info: ' . var_export($info));
-					}
-					curl_close($curl);
-					$json_array = array();
-					unset($json_array);
-					$json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
-					if (isset($json_array->response->status) && $json->response->status == 'ERROR') {
-						die('error occurred: ' . $json_array->response->errormessage);
-					}
-
-					if(isset($curl_response)) {
-						$_SESSION['password'] = $password;
-					}
-					//Code to save new password. Change Password Service
+					include "../classes/Customer.php";
+					$tmpCustomerObject = new Customer();
+					$tmpCustomerObject->changePassword($_SESSION['customerID'], $password);
+					?>
+					<script type="text/javascript">
+						alert("Your Password Has Been Successfully Changed")
+						window.location.replace("myaccount.php");
+					</script>
+					<?php
 				}
 			}
 			if(isset($_POST['deactivateAccount'])){
 			?>
 			<script type="text/javascript">
 				if(confirm("Are your sure you want to deactivate your Customer Account?")){
+					<?php
+						//Code to deactivate account
+						include "../classes/Customer.php";
+						$tmpCustomerObject = new Customer();
+						$tmpCustomerObject->deactivateAccount($_SESSION['customerID']);
+						session_start();
+						$_SESSION = array();
+						session_destroy();
+					?>
 					window.location.replace("home.php");
 				}
 			</script>
 			<?php
-				//Code to deactivate account
-				session_start();
-				$_SESSION = array();
-				session_destroy();
 			}
 			?>
 		<pre align="center"><input type='submit' name="changePassword" value='Change My Password'/>           <input type='submit' name="deactivateAccount" value='Deactivate My Account'/></pre>
