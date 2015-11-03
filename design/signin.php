@@ -30,7 +30,7 @@
 			echo "<font color='#FB0307'>*Please fill in your username</font>";
 			$username = "";
 		} else {
-			$service_url = "http://localhost:8080/login?username=".$username."&password=".$password;
+			$service_url = "http://toystore-jsme.rhcloud.com/login?username=".$username."&password=".$password;
 			$curl = curl_init($service_url);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 			$curl_response = curl_exec($curl);

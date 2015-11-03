@@ -78,7 +78,7 @@ class Customer
     }
 
     public function changePassword($tmpCustomerID, $tmpNewPassword){
-        $service_url = "http://localhost:8080/customer/changepassword?customerID=".$tmpCustomerID.
+        $service_url = "http://toystore-jsme.rhcloud.com/customer/changepassword?customerID=".$tmpCustomerID.
             "&newPassword=".$tmpNewPassword;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -104,7 +104,7 @@ class Customer
     }
 
     public function deactivateAccount($tmpCustomerID){
-        $service_url = "http://localhost:8080/customer/delete?customerid=".$tmpCustomerID;
+        $service_url = "http://toystore-jsme.rhcloud.com/customer/delete?customerid=".$tmpCustomerID;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $curl_response = curl_exec($curl);

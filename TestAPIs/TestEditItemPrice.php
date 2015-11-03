@@ -12,7 +12,7 @@
 
 <?php
     //Change Item name each time
-    $service_url = "http://localhost:8080/item/update/price?itemID=9&newPrice=2499.99";
+    $service_url = "http://toystore-jsme.rhcloud.com/item/update/price?itemID=9&newPrice=2499.99";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);

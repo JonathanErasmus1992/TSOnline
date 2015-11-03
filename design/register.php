@@ -39,7 +39,7 @@
             }
             else{
                 $firstnames = str_replace(" ", "%20", $firstnames);
-                $service_url = "http://localhost:8080/register?username=".$username."&password=".$password."&firstname=".
+                $service_url = "http://toystore-jsme.rhcloud.com/register?username=".$username."&password=".$password."&firstname=".
                 $firstnames."&lastname=".$lastname."&idnumber=".$idnumber."&contact=".$contact;
                 $curl = curl_init($service_url);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

@@ -11,7 +11,7 @@ include "../design/headerSignIn.php";
 
 <?php
     //Change Item name each time
-    $service_url = "http://localhost:8080/item/category?category=0-3";
+    $service_url = "http://toystore-jsme.rhcloud.com/item/category?category=0-3";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);

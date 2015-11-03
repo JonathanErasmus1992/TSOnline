@@ -10,7 +10,7 @@
 ?>
 
 <?php
-    $service_url = "http://localhost:8080/orderline/handle?orderID=9&itemID=3&quantity=4";
+    $service_url = "http://toystore-jsme.rhcloud.com/orderline/handle?orderID=9&itemID=3&quantity=4";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);

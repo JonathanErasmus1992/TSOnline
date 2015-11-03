@@ -10,7 +10,7 @@
 ?>
 
 <?php
-    $service_url = "http://localhost:8080/customer/changepassword?customerID=2&newPassword=12345";
+    $service_url = "http://toystore-jsme.rhcloud.com/customer/changepassword?customerID=2&newPassword=12345";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);

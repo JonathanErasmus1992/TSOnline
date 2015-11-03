@@ -3,7 +3,7 @@
 class Order
 {
     public function createCustomerOrder($tmpCustomerID){
-        $service_url = "http://localhost:8080/order/get?customerID=".$tmpCustomerID;
+        $service_url = "http://toystore-jsme.rhcloud.com/order/get?customerID=".$tmpCustomerID;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $curl_response = curl_exec($curl);
@@ -26,7 +26,7 @@ class Order
     }
 
     public function getOrderDate($tmpOrderID){
-        $service_url = "http://localhost:8080/order/getdate?orderID=".$tmpOrderID;
+        $service_url = "http://toystore-jsme.rhcloud.com/order/getdate?orderID=".$tmpOrderID;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $curl_response = curl_exec($curl);
@@ -56,7 +56,7 @@ class Order
     }
 
     public function getCustomerOrder($tmpCustomerID){
-        $service_url = "http://localhost:8080/order/get?customerID=".$tmpCustomerID;
+        $service_url = "http://toystore-jsme.rhcloud.com/order/get?customerID=".$tmpCustomerID;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $curl_response = curl_exec($curl);
@@ -80,7 +80,7 @@ class Order
     }
 
     public function getItemsList(){
-        $service_url = "http://localhost:8080/item/all";
+        $service_url = "http://toystore-jsme.rhcloud.com/item/all";
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $curl_response = curl_exec($curl);
@@ -103,7 +103,7 @@ class Order
     }
 
     public function removeItemFromOrder($tmpOrderID, $tmpItemID){
-        $service_url = "http://localhost:8080/orderline/handle?orderID=".$tmpOrderID."&itemID=".
+        $service_url = "http://toystore-jsme.rhcloud.com/orderline/handle?orderID=".$tmpOrderID."&itemID=".
             $tmpItemID."&quantity=0";
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -133,7 +133,7 @@ class Order
             $tmpItemAddedID = $_SESSION['itemsAdded'][$i];
             $tmpItemAddedAmount = $_SESSION['amountOrdered_'.$tmpItemAddedID];
 
-            $service_url = "http://localhost:8080/orderline/handle?orderID=".$tmpCustomerOrderID."&itemID=".
+            $service_url = "http://toystore-jsme.rhcloud.com/orderline/handle?orderID=".$tmpCustomerOrderID."&itemID=".
                 $tmpItemAddedID."&quantity=".$tmpItemAddedAmount;
             $curl = curl_init($service_url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -159,7 +159,7 @@ class Order
     }
 
     public function emptyOrderCart( $tmpOrderID){
-        $service_url = "http://localhost:8080/order/delete?orderID=".$tmpOrderID;
+        $service_url = "http://toystore-jsme.rhcloud.com/order/delete?orderID=".$tmpOrderID;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $curl_response = curl_exec($curl);
@@ -184,7 +184,7 @@ class Order
         $tmpCustomerID = $_SESSION['customerID'];
         $tmpOrderID = $_SESSION['order_id'];
 
-        $service_url = "http://localhost:8080/order/checkout?orderID=".$tmpOrderID."&customerID=".$tmpCustomerID;
+        $service_url = "http://toystore-jsme.rhcloud.com/order/checkout?orderID=".$tmpOrderID."&customerID=".$tmpCustomerID;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $curl_response = curl_exec($curl);

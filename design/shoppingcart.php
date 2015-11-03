@@ -24,7 +24,7 @@
     $cartPrice = 0;
     $tmpStringCartPrice = 0;
 
-    $service_url = "http://localhost:8080/item/all";
+    $service_url = "http://toystore-jsme.rhcloud.com/item/all";
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);
@@ -57,21 +57,6 @@
                 $item->createItem($items->id, $items->name, $items->category, $tmpTotalPrice, $tmpNumber);
                 $itemList[ ] = $item;
             }
-
-            /*for($i = 0; $i < count($_SESSION['itemsAdded']); $i++){
-                $tmp1 = $_SESSION['itemsAdded'][$i];
-                //$tmpIndex = array_search($tmp1, $_SESSION['itemsAdded']);
-                //$tmp2 = $_SESSION['amountOrdered_'.$tmp1];
-
-                if($items->id == $tmp1){
-                    $tmpIndex = array_search($tmp1, $_SESSION['itemsAdded']);
-                    $tmp2 = $_SESSION['amountOrdered_'.$tmp1];
-                    $tmpTotalPrice = $items->price * $items->quantity;
-                    $item = new Item();
-                    $item->createItem($items->id, $items->name, $items->category, $tmpTotalPrice, $tmp2);
-                    $itemList[ ] = $item;
-                }
-            }*/
         }
     }
 ?>

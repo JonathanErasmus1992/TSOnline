@@ -12,7 +12,7 @@ include "../design/headerSignIn.php";
 
 <?php
 //Change Item name each time
-$service_url = "http://localhost:8080/item/add?name=Tracy%20Doll&category=0-3&stock=10&price=150.50";
+$service_url = "http://toystore-jsme.rhcloud.com/item/add?name=Tracy%20Doll&category=0-3&stock=10&price=150.50";
 $curl = curl_init($service_url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $curl_response = curl_exec($curl);

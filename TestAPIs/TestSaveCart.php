@@ -23,7 +23,7 @@
         echo "Item ID: ".$tmpItemAddedID." Amount Ordered: ".$tmpItemAddedAmount;
         echo "</br>";
 
-        $service_url = "http://localhost:8080/orderline/handle?orderID=".$tmpCustomerOrderID."&itemID=".
+        $service_url = "http://toystore-jsme.rhcloud.com/orderline/handle?orderID=".$tmpCustomerOrderID."&itemID=".
             $tmpItemAddedID."&quantity=".$tmpItemAddedAmount;
         $curl = curl_init($service_url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

@@ -24,7 +24,7 @@
     $tmpCategory = $_SESSION['selectedCategory'];
     $tmpCategory = str_replace(" ", "%20", $tmpCategory);
 
-    $service_url = "http://localhost:8080/item/category?category=".$tmpCategory;
+    $service_url = "http://toystore-jsme.rhcloud.com/item/category?category=".$tmpCategory;
     $curl = curl_init($service_url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $curl_response = curl_exec($curl);
