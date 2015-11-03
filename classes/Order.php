@@ -20,9 +20,6 @@ class Order
             die('error occurred: ' . $json_array->response->errormessage);
         }
 
-        if(isset($json_array)) {
-            //var_dump($json_array);
-        }
     }
 
     public function getOrderDate($tmpOrderID){
@@ -39,17 +36,6 @@ class Order
         $json_array = json_decode($curl_response, true, 512, JSON_BIGINT_AS_STRING);
         if (isset($json_array->response->status) && $json_array->response->status == 'ERROR') {
             die('error occurred: ' . $json_array->response->errormessage);
-        }
-
-        if(isset($curl_response)) {
-            if($curl_response == ""){
-                //echo "GREEN BLUE YELLOW";
-            }
-            else{
-                //echo $curl_response;
-            }
-        }else{
-            //echo "BLUE BLUE BLUE";
         }
 
         return $curl_response;
@@ -73,9 +59,6 @@ class Order
             die('error occurred: ' . $json_array->response->errormessage);
         }
 
-        if(isset($json_array)) {
-            //var_dump($json_array);
-        }
         return $json_array;
     }
 
@@ -149,9 +132,6 @@ class Order
             $json_array = json_decode($curl_response, false, 512, JSON_BIGINT_AS_STRING);
             if (isset($json_array->response->status) && $json_array->response->status == 'ERROR') {
                 die('error occurred: ' . $json_array->response->errormessage);
-            }
-            if(isset($curl_response)) {
-                //var_dump($curl_response);
             }
 
             session_write_close();

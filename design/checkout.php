@@ -47,6 +47,7 @@
                     <td align="center"><?php echo "Order Date: ".$tmpOrderDate?></td>
                 </tr>
             </table>
+            <br/>
             <p align="center"><input type="submit" name="okCheckout" value="Back To Toys 4 All Home"/></p>
         </fieldset>
     </form>
